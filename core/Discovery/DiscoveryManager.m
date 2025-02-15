@@ -121,7 +121,7 @@
         _compatibleDevices = [[NSMutableDictionary alloc] init];
 
         _appStateChangeNotifier = stateNotifier ?: [AppStateChangeNotifier new];
-        __weak typeof(self) wself = self;
+        typeof(self) wself = self;
         _appStateChangeNotifier.didBackgroundBlock = ^{
             typeof(self) sself = wself;
             [sself pauseDiscovery];

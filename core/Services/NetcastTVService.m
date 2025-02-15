@@ -2190,7 +2190,7 @@ NSString *lgeUDAPRequestURI[8] = {
 
 - (ServiceSubscription *) subscribeTextInputStatusWithSuccess:(TextInputStatusInfoSuccessBlock)success failure:(FailureBlock)failure
 {
-    __weak NetcastTVService *weakSelf = self;
+    NetcastTVService *weakSelf = self;
     
     ServiceSubscription *serviceSubscription = [self addSubscribe:@"KeyboardVisible" success:^(NSDictionary *responseObject)
     {
