@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   
   s.platform         = :ios, '12.0'
   s.swift_version    = '5.0'
-  s.requires_arc = false
+  s.requires_arc = true
 
   s.source_files     = 'core/**/*.{h,m,swift}'
   s.public_header_files = 'core/**/*.h'

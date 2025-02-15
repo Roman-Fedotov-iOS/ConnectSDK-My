@@ -324,7 +324,7 @@ static NSString *const kSubtitleTrackIdentifier = @"0";
     if (!_messageSubscription)
         _messageSubscription = [ServiceSubscription subscriptionWithDelegate:nil target:nil payload:nil callId:-1];
 
-    WebOSWebAppSession *weakSelf = self;
+    __weak WebOSWebAppSession *weakSelf = self;
 
     _connectFailure = ^(NSError *error) {
         if (weakSelf)
@@ -342,7 +342,7 @@ static NSString *const kSubtitleTrackIdentifier = @"0";
         }
     };
 
-    FailureBlock weakConnectFailure = _connectFailure;
+    __weak FailureBlock weakConnectFailure = _connectFailure;
 
     _connectSuccess = ^(id socketResponseObject) {
         if (!weakSelf || !weakConnectFailure)
