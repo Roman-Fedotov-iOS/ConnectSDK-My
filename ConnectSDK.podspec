@@ -21,4 +21,29 @@ Pod::Spec.new do |s|
   }
 
   s.frameworks       = 'Foundation', 'UIKit'
+
+  # Prefix Header Definitions
+  s.prefix_header_contents = <<-PREFIX
+                                  //
+                                  //  Prefix header for ConnectSDK
+                                  //
+                                  #define CONNECT_SDK_VERSION "#{s.version}"
+
+                                  // Uncomment this line to enable SDK logging
+                                  //#define CONNECT_SDK_ENABLE_LOG
+
+                                  #ifndef kConnectSDKWirelessSSIDChanged
+                                  #define kConnectSDKWirelessSSIDChanged @"Connect_SDK_Wireless_SSID_Changed"
+                                  #endif
+
+                                  #ifdef CONNECT_SDK_ENABLE_LOG
+                                      #ifdef DEBUG
+                                      #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+                                      #else
+                                      #   define DLog(...)
+                                      #endif
+                                  #else
+                                      #   define DLog(...)
+                                  #endif
+                               PREFIX
 end
