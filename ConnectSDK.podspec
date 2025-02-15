@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
                                   //
                                   //  Prefix header for ConnectSDK
                                   //
-                                  #define CONNECT_SDK_VERSION "#{s.version}"
+                                  #define CONNECT_SDK_VERSION @"#{s.version}"
 
                                   // Uncomment this line to enable SDK logging
                                   //#define CONNECT_SDK_ENABLE_LOG
