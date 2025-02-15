@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
   
   s.platform         = :ios, '12.0'
   s.swift_version    = '5.0'
-  s.requires_arc = true
+  s.requires_arc = false
   s.subspec 'ConnectSDK-My' do |ss|
-  ss.source_files = 'core/**/*.m'
-  ss.requires_arc = false
+  ss.source_files = 'core/**/WebOSWebAppSession.m'
+  ss.requires_arc = true
 end
 
   s.source_files     = 'core/**/*.{h,m,swift}'
