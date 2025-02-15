@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.swift_version    = '5.0'
   s.requires_arc = false
   s.subspec 'ConnectSDK-My' do |ss|
-  ss.source_files = 'core/WebOSWebAppSession.m'
+  ss.source_files = 'core/Helpers/Services/Sessions/WebOSWebAppSession.m'
   ss.requires_arc = true
 end
 
